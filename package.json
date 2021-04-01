@@ -1,0 +1,34 @@
+{
+  "name": "book-library",
+  "version": "1.0.0",
+  "description": "A REST API created using Express and Sequelize to interact with a MySQL database",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha tests/**/*.js --exit --recursive --timeout 30000 --file ./tests/test-setup.js",
+    "start": "nodemon -r dotenv/config index.js",
+    "prestart": "node scripts/create-database.js",
+    "pretest": "node scripts/create-database.js test",
+    "posttest": "node scripts/drop-database.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jlopenshaw41/book-library-api.git"
+  },
+  "author": "Jennifer Openshaw",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jlopenshaw41/book-library-api/issues"
+  },
+  "homepage": "https://github.com/jlopenshaw41/book-library-api#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "sequelize": "^6.3.5"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "dotenv": "^8.2.0",
+    "mocha": "^8.2.1",
+    "nodemon": "^2.0.7",
+    "supertest": "^6.0.1"
+  }
+}
